@@ -73,7 +73,7 @@ export default class NewListViewCExtCommandSet extends BaseListViewCommandSet<IN
     this.context.listView.selectedRows.forEach(
       async row => {
         let request: Promise<SPHttpClientResponse>;
-        var uniqueIdL=row.getValueByName("UniqueId").toLowerCase();
+        var uniqueIdL=row.getValueByName("UniqueId").toLowerCase(); 
         var etag='"'+uniqueIdL.replace('{','').replace('}','') +","+row.getValueByName("owshiddenversion")+'"';
         const now=new Date(); 
         request=this._updateItem(now.toString(),row.getValueByName("ID"),etag);
